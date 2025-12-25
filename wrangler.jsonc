@@ -19,8 +19,8 @@
 	],
 	"r2_buckets": [
 		{
-			"bucket_name": "NEXT_INC_CACHE_R2_BUCKET",
-			"binding": "turbine"
+			"bucket_name": "turbine",
+			"binding": "NEXT_INC_CACHE_R2_BUCKET"
 		}
 	],
 	"images": {
