@@ -1,7 +1,7 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"main": ".open-next/worker.js",
-	"name": "turbines",
+	"name": "turbine",
 	"compatibility_date": "2024-12-30",
 	"compatibility_flags": [
 		"nodejs_compat",
@@ -13,13 +13,13 @@
 	},
 	"services": [
 		{
-			"binding": "NEXT_INC_CACHE_R2_BUCKET",
+			"binding": "WORKER_SELF_REFERENCE",
 			"service": "turbine"
 		}
 	],
 	"r2_buckets": [
 		{
-			"bucket_name": "turbine",
+			"bucket_name": "NEXT_INC_CACHE_R2_BUCKET",
 			"binding": "turbine"
 		}
 	],
