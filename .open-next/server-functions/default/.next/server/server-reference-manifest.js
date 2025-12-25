@@ -1,1 +1,0 @@
-self.__RSC_SERVER_MANIFEST="{\"node\":{\"6059bdf7513fc88fe675a69ceb2fb8f020d3466a09\":{\"workers\":{\"app/page\":{\"moduleId\":\"8274\",\"async\":false}},\"layer\":{\"app/page\":\"action-browser\"},\"filename\":\"app/actions.ts\",\"exportedName\":\"sendEmail\"}},\"edge\":{},\"encryptionKey\":\"process.env.NEXT_SERVER_ACTIONS_ENCRYPTION_KEY\"}"
