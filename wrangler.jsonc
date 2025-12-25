@@ -13,8 +13,8 @@
 	},
 	"services": [
 		{
-			"binding": "WORKER_SELF_REFERENCE",
-			"service": "turbines"
+			"binding": "NEXT_INC_CACHE_R2_BUCKET",
+			"service": "turbine"
 		}
 	],
 	"r2_buckets": [
