@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { turbines } from '../../data';
 import Navbar from '../../components/Navbar';
+import Image from 'next/image';
 
 interface Props {
     params: Promise<{ slug: string }>;
@@ -29,9 +30,14 @@ export default async function TurbinePage({ params }: Props) {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                     {/* Product Image Area */}
                     <div className="bg-[#e2ded9] rounded-sm aspect-[4/3] relative overflow-hidden border border-[#d4cfc9] shadow-inner">
-                        <div className={`absolute inset-0 ${isInox ? 'bg-gradient-to-br from-[#e2ded9] via-[#d4cfc9] to-[#c8c2bc]' :
-                                'bg-gradient-to-br from-[#121C1E] via-[#1e2e30] to-[#2d3a3d]'
-                            }`} />
+                        {turbine.image && (
+                            <Image
+                                src={turbine.image}
+                                alt={turbine.name}
+                                fill
+                                className='object-cover'
+                            />
+                        )}
 
                         <div className="absolute top-6 right-6 flex flex-col gap-2 items-end">
                             <span className="bg-white/90 backdrop-blur px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#121C1E] shadow-sm rounded-sm">
@@ -52,7 +58,7 @@ export default async function TurbinePage({ params }: Props) {
                         <div className="w-20 h-1 bg-[#ea580c] mb-6"></div>
 
                         <p className="text-2xl text-[#121C1E] font-bold mb-8 font-mono">
-                            {turbine.price} <span className="text-sm font-normal text-[#121C1E]/60 ml-2">(HT)</span>
+                            {turbine.price} <span className="text-sm font-normal text-[#121C1E]/60 ml-2">(TTC)</span>
                         </p>
 
                         <p className="text-lg text-[#121C1E]/80 leading-relaxed mb-10">

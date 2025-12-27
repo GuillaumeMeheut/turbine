@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Turbine } from '../data';
 
 export default function ProductCard({ product }: { product: Turbine }) {
@@ -17,9 +18,17 @@ export default function ProductCard({ product }: { product: Turbine }) {
         >
             <div className={`h-48 relative border-b border-[#d4cfc9] ${bgClass}`}>
                 <div className="absolute inset-0 opacity-20 bg-grid-pattern"></div>
+                {product.image && (
+                    <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        className='object-cover'
+                    />
+                )}
 
                 {/* Badges for Model and Material */}
-                <div className="absolute top-3 left-3 flex gap-2">
+                <div className="absolute top-3 left-3 flex gap-2 z-10">
                     <span className="bg-[#121C1E] text-[#F1E8DF] text-xs font-bold px-2 py-1 uppercase tracking-wider rounded-sm shadow-sm">
                         {product.model}
                     </span>
